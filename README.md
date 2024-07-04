@@ -19,11 +19,11 @@
 |--------------------|------------|-------------|
 | user               | references | null: false, foreign_key: true |
 | title              | string     | null: false |
-| impression         | text       |             |
-| evaluation_id      | integer    | null: false |
 | author             | string     | null: false |
 | genre              | integer    | null: false |
 | tag                | string     |             |
+| evaluation_id      | integer    | null: false |
+| impression         | text       |             |
 
 ### Association
 
