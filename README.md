@@ -42,3 +42,5 @@
 
 - belongs_to : user
 - belongs_to : review
+
+(./app/assets/images/book_share.png)
