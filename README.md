@@ -43,4 +43,10 @@
 - belongs_to : user
 - belongs_to : review
 
+## ER図
+
 ![ER図(BOOK_SHARE)](./app/assets/images/book_share.png)
+
+## 画面遷移図
+
+![画面遷移図(BOOK_SHARE)](./app/assets/images/flow.png)
