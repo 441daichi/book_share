@@ -2,7 +2,13 @@
   <div class='search-bar-contents'>
     <%= link_to image_tag("book_icon.png", class:"book-icon"), "/" %>
     <form class="search-form" action="#">
-      <input class='input-box' placeholder='キーワードから探す'>
+      <input class='input-keyword-box' placeholder='キーワードから探す'>
+      <button class="search-button">
+        <%= image_tag "search_icon.png", class:"search-icon" %>
+      </button>
+      <select class='input-janre-box'>
+        <option value="" selected disabled>ジャンルから探す</option>
+      </select>
       <button class="search-button">
         <%= image_tag "search_icon.png", class:"search-icon" %>
       </button>
