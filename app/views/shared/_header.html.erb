@@ -6,7 +6,7 @@
       <button class="search-button">
         <%= image_tag "search_icon.png", class:"search-icon" %>
       </button>
-      <select class='input-janre-box'>
+      <select class='input-genre-box'>
         <option value="" selected disabled>ジャンルから探す</option>
       </select>
       <button class="search-button">
@@ -17,8 +17,8 @@
   <div class='nav'>
     <ul class='lists'>
       <%# if user_signed_in?%> 
-        <li><%= link_to "#", "#", class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト',class: "logout" %></li>
+        <li><%= link_to "新規登録", "#", class: "sign-up" %></li>
+        <li><%= link_to 'ログアウト',"#", class: "logout" %></li>
 
       <%# else %> 
         <%# <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li> 
