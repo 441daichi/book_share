@@ -1,0 +1,66 @@
+.top-page-header{
+  width: 100%;
+  height: 100px;
+  display:flex;
+}
+
+.search-bar-contents {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-form{
+  display:flex;
+  height: 5vh;
+}
+
+.book-icon{
+  height: 10vh;
+  margin-right: 5vw;
+  margin-left: 20px;
+}
+
+.input-keyword-box{
+  width: 30vw;
+}
+
+.input-genre-box{
+  width: 15vw;
+}
+
+.search-button{
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.search-icon{
+  height: 5vh;
+}
+
+.nav{
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.lists{
+  display:flex;
+  justify-content: flex-start;
+  list-style: none;
+  align-items: center;
+}
+
+.sign-up{
+  text-decoration: none;
+  color: black;
+  margin-right: 30px;
+}
+
+.logout{
+  text-decoration: none;
+  color: black;
+}

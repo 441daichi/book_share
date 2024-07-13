@@ -1,0 +1,39 @@
+<%= render partial:'shared/header' %>
+<div class="main">
+  <div class="hero">
+    <h1>お気に入りの本をシェアしよう！</h1>
+    <p>読了した本の感想を投稿して、他のユーザーと共有しましょう。</p>
+    <%= link_to '今すぐ投稿', "#", class: 'btn btn-primary' %>
+  </div>
+
+  <div class="sample-content">
+    <h2>サンプルコンテンツ</h2>
+     <div class="card-container">
+      <div class="card">
+        <%= image_tag 'sample-book-cover.png', alt: 'Sample Book Cover' %>
+        <div class="card-content">
+          <h3> 本のタイトル</h3>
+          <p>著者</p>
+          <div class="rating">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+          </div>
+          <p>おすすめの本です。</p>
+        </div>
+      </div>
+      <div class="card">
+        <%= image_tag 'sample-book-cover.png', alt: 'Sample Book Cover' %>
+        <div class="card-content">
+          <h3>本のタイトル</h3>
+          <p>著者</p>
+          <div class="rating">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+          </div>
+          <p>おすすめの本です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<%= render partial:'shared/footer' %>

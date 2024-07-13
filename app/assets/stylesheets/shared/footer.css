@@ -1,0 +1,20 @@
+.footer{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: skyblue;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.footer-book-icon {
+  width: 80px;
+}
+
+.footer p {
+  margin: 0;
+  padding: 0;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+}
