@@ -68,3 +68,8 @@
 .login-btn:active {
   background-color: #1e7e34;
 }
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+}
