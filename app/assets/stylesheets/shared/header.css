@@ -57,6 +57,17 @@
 .sign-up{
   text-decoration: none;
   color: black;
+}
+
+.login{
+  text-decoration: none;
+  color: black;
+  margin-right: 30px;
+}
+
+.user-nickname{
+  text-decoration: none;
+  color: black;
   margin-right: 30px;
 }
 

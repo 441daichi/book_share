@@ -1,0 +1,19 @@
+.second-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #bdb5b513
+}
+
+.second-logo {
+  height: 10vh;
+}
+
+.second-footer p {
+  margin: 0;
+  padding: 0;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+}

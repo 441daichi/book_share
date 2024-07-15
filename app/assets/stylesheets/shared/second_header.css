@@ -1,0 +1,11 @@
+.second-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #bdb5b513
+}
+
+.second-logo {
+  margin-top: 20px;
+  height: 10vh;
+}

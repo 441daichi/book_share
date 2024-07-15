@@ -1,0 +1,103 @@
+.registration_back{
+  background-color: #bdb5b513
+}
+.registration-main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #c4ecd5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrap {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-header {
+  position: relative;
+  text-align: center;
+}
+
+.form-header:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background: -webkit-repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
+  background: repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
+}
+
+.form-header-text {
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-text-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.form-text {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.indispensable {
+  color: red;
+  font-weight: bold;
+}
+
+.input-default {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.info-text {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.register-btn {
+  width: 200px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+}
+
+.register-btn:hover {
+  background-color: #218838;
+}
+
+.register-btn:active {
+  background-color: #1e7e34;
+}
