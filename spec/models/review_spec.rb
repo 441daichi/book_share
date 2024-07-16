@@ -16,7 +16,7 @@ RSpec.describe Review, type: :model do
       end
       it 'レビュー(5段階)が[---]以外なら投稿できる' do
         @review.evaluation_id = 1
-        expect(@review).to be_valis
+        expect(@review).to be_valid
       end
     end
 
@@ -47,19 +47,19 @@ RSpec.describe Review, type: :model do
         expect(@review.errors.full_messages).to include("Genre must be other than 0")
       end
       it 'タグが20文字を超えると投稿できない' do
-        @review.tag = FactoryBot.build(:review, tag: 'a' * 21)
+        @review.tag = 'a' * 21
         @review.valid?
-        expect(@review.errors.full_messages).to include("Tag must be less than or equal to 20")
+        expect(@review.errors.full_messages).to include("Tag is too long (maximum is 20 characters)")
       end
       it 'レビュー(5段階)が[---]だと投稿できない' do
         @review.evaluation_id = 0
         @review.valid?
-        expect(@review.errors.full_messages).to include("Evaluation must be ther than 0")
+        expect(@review.errors.full_messages).to include("Evaluation must be other than 0")
       end
       it 'レビュー(テキスト)が300文字を超えると投稿できない' do
-        @review.impression = FactoryBot.build(:review, impression: 'a' * 301)
+        @review.impression = 'a' * 301
         @review.valid?
-        expect(@review.errors.full_messages).to include("Impression must be less than or equal to 300")
+        expect(@review.errors.full_messages).to include("Impression is too long (maximum is 300 characters)")
       end
     end
   end

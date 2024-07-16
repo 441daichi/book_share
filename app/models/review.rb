@@ -11,7 +11,8 @@ class Review < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
   validates :genre_id, presence: true, numericality: { other_than: 0 }
-  validates :tag, numericality: { only_integer: true, less_than_or_equal_to: 20 }
+  validates :tag, length: { maximum: 20 }
   validates :evaluation_id, presence: true, numericality: { other_than: 0 }
-  validates :impression, numericality: { only_integer: true, less_than_or_equal_to: 300 }
+  validates :impression, length: { maximum: 300 }
+
 end
