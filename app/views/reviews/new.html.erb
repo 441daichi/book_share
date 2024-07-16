@@ -34,7 +34,7 @@
         ジャンル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:genre_id, Genre.all_genres, :id, :name, {}, {class:"select-box", id:"review-genre"}) %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"review-genre"}) %>
       <div class="weight-bold-text">
         タグ
       </div>
@@ -48,7 +48,7 @@
         5段階評価
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:evaluation_id, Evaluation.all_evaluations, :id, :name, {}, {class:"select-box", id:"review-evaluation"}) %>
+      <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select-box", id:"review-evaluation"}) %>
       <div class="weight-bold-text">
         レビューコメント
       </div>
