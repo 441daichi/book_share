@@ -7,8 +7,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    Review.create(review_params)
-    redirect_to '/'
+    @review = Review.new(review_params)
+    if @review.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
