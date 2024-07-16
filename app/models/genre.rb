@@ -12,5 +12,6 @@ class Genre < ActiveHash::Base
     { id: 9, name: 'コミック'},
   ]
 
+  include ActiveHash::Associations
   has_many :reviews
 end

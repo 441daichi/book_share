@@ -8,5 +8,6 @@ class Evaluation < ActiveHash::Base
     { id: 5, name: '★★★★★' }
   ]
 
+  include ActiveHash::Associations
   has_many :reviews
 end
