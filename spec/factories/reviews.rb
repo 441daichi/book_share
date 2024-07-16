@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :review do
-    assosiation :user
+    association :user
 
     title{ Faker::Book.title }
     author { Faker::Book.author }
