@@ -34,7 +34,7 @@
         ジャンル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:janre_id, Janre.all, :id, :name, {}, {class:"select-box", id:"review-janre"}) %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"review-genre"}) %>
       <div class="weight-bold-text">
         タグ
       </div>
