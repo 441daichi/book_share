@@ -1,0 +1,60 @@
+<div class="reviews-contents">
+  <div class="reviews-main">
+    <h2 class="reviews-title">レビュー内容を入力</h2>
+    <%= form_with model: @review, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 表紙画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        本の表紙画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>クリックしてファイルをアップロード</p>
+        <%= f.file_field :image, id:"review-image" %>
+      </div>
+    </div>
+    <%# 表紙画像 %>
+
+    <%# 本の詳細 %>
+    <div class="new-reviews">
+      <div class="weight-bold-text">
+        本のタイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"reviews-text", id:"review-title", placeholder:"本のタイトル"%>
+      <div class="weight-bold-text">
+        著者
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :author, class:"reviews-text", id: "review-author", placeholder:"本の著者"%>
+      <div class="weight-bold-text">
+        ジャンル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:janre_id, Janre.all, :id, :name, {}, {class:"select-box", id:"review-janre"}) %>
+      <div class="weight-bold-text">
+        タグ
+      </div>
+      <%= f.text_area :tag, class:"reviews-text", id:"review-tag", placeholder:"タグ" %>
+    </div>
+    <%# 本の詳細 %>
+
+    <%# 本のレビュー %>
+    <div class="reviews-detail">
+      <div class="weight-bold-text">
+        5段階評価
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select-box", id:"review-evaluation"}) %>
+      <div class="weight-bold-text">
+        レビューコメント
+      </div>
+      <%= f.text_area :impression, class:"reviews-text", id:"review-impression", placeholder:"レビューコメント(300文字以内)" %>
+    </div>
+    <%# 本のレビュー %>
+
+  </div>
+</div>
