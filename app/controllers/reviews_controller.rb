@@ -4,6 +4,11 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
+  def create
+    Review.create(review_params)
+    redirect_to '/'
+  end
+
   private
 
   def review_params
