@@ -34,7 +34,7 @@
         ジャンル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"review-genre"}) %>
+      <%= f.collection_select(:genre_id, Genre.all_genres, :id, :name, {}, {class:"select-box", id:"review-genre"}) %>
       <div class="weight-bold-text">
         タグ
       </div>
@@ -48,13 +48,21 @@
         5段階評価
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select-box", id:"review-evaluation"}) %>
+      <%= f.collection_select(:evaluation_id, Evaluation.all_evaluations, :id, :name, {}, {class:"select-box", id:"review-evaluation"}) %>
       <div class="weight-bold-text">
         レビューコメント
       </div>
       <%= f.text_area :impression, class:"reviews-text", id:"review-impression", placeholder:"レビューコメント(300文字以内)" %>
     </div>
     <%# 本のレビュー %>
+
+    <%# 投稿ボタン %>
+    <div class="review-btn-contents">
+      <%= f.submit "投稿する", class:"review-btn" %>
+      <%= link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# 投稿ボタン %>
+
     <% end %>
   </div>
 </div>

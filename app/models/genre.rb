@@ -1,5 +1,5 @@
 class Genre < ApplicationRecord
-  Genre = [
+  GENRES = [
     { id: 0, name: '---' },
     { id: 1, name: '文学・小説'},
     { id: 2, name: '社会・ビジネス'},
@@ -11,6 +11,10 @@ class Genre < ApplicationRecord
     { id: 8, name: '子ども'},
     { id: 9, name: 'コミック'},
   ]
+
+  def self.all_genres
+    GENRES
+  end
 
   has_many :reviews
 end
