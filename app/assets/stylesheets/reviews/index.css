@@ -32,25 +32,15 @@ body {
   text-decoration: none;
 }
 
-.sample-content {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
-
-.sample-content h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 .card-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
 .card {
-  flex: 1;
+  box-sizing: border-box;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -62,6 +52,7 @@ body {
   align-items: center;
   padding: 20px;
 }
+
 
 .card img {
   width: 100%;
