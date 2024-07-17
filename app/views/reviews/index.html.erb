@@ -14,7 +14,7 @@
             <li class='list'>
             <%= link_to review_path(review) do %>
             <div class="card">
-              <%= image_tag review.image.variant(resize: '500x500'), class: "item-img" if review.image.attached? %>
+              <%= image_tag review.image.variant(resize: '500x500'), class: "review-img" if review.image.attached? %>
               <div class="card-content">
                 <h3><%= review.title %></h3>
                 <p><%= review.author %></p>

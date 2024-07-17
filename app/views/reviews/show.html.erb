@@ -1,18 +1,19 @@
 <%= render partial:'shared/header' %>
+
 <div calss = "main">
   <div class="book-detail">
+    <p>投稿者: <%= @review.user.nickname %></p>
     <div class="book-image">
-      <%= image_tag "sample-book-cover", alt: "book_title" %>
+      <%= image_tag @review.image, alt: "book_title" %>
     </div>
     <div class="book-info">
-      <h1><%= "@book.title" %></h1>
-      <p>著者: <%= "@book.author" %></p>
-      <div class="rating">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-      </div>
-      <p><%= "@book.comment" %></p>
-      <p>投稿者: <%= "@book.user.name" %></p>
+      <h1><%= @review.title %></h1>
+      <p>著者: <%= @review.author %></p>
+      <p><%= @review.evaluation.name %></p>
+      <p><%= @review.impression %></p>
+
     </div>
   </div>
 </div>
+
 <%= render partial:'shared/footer' %>
