@@ -89,3 +89,12 @@ body {
   color: gold;
   margin: 0 2px;
 }
+
+.list{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  color:black;
+}
