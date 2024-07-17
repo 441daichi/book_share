@@ -3,35 +3,25 @@
   <div class="hero">
     <h1>お気に入りの本をシェアしよう！</h1>
     <p>読了した本の感想を投稿して、他のユーザーと共有しましょう。</p>
-    <%= link_to '今すぐ投稿', "#", class: 'btn btn-primary' %>
+    <%= link_to '今すぐ投稿', new_review_path, class: 'btn btn-primary' %>
   </div>
 
-  <div class="sample-content">
-    <h2>サンプルコンテンツ</h2>
-     <div class="card-container">
-      <div class="card">
-        <%= image_tag 'sample-book-cover.png', alt: 'Sample Book Cover' %>
-        <div class="card-content">
-          <h3> 本のタイトル</h3>
-          <p>著者</p>
-          <div class="rating">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+  <div class="review-content">
+    <h2>新着投稿</h2>
+      <div class="card-container">
+        <% @reviews.each do |review| %>
+          <div class="card">
+            <%= image_tag review.image.variant(resize: '500x500'), class: "item-img" if review.image.attached? %>
+            <div class="card-content">
+              <h3><%= review.title %></h3>
+              <p><%= review.author %></p>
+              <p>タグ:<%= review.tag %></p>
+              <p>評価: <%= review.evaluation.name %></p>
+              <p><%= review.impression %></p>
+            </div>
           </div>
-          <p>おすすめの本です。</p>
-        </div>
+        <% end %>
       </div>
-      <div class="card">
-        <%= image_tag 'sample-book-cover.png', alt: 'Sample Book Cover' %>
-        <div class="card-content">
-          <h3>本のタイトル</h3>
-          <p>著者</p>
-          <div class="rating">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-          </div>
-          <p>おすすめの本です。</p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
