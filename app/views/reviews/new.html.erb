@@ -1,3 +1,5 @@
+<%= render partial:'shared/header' %>
+
 <div class="reviews-contents">
   <div class="reviews-main">
     <h2 class="reviews-title">レビュー内容を入力</h2>
@@ -52,7 +54,7 @@
       <div class="weight-bold-text">
         レビューコメント
       </div>
-      <%= f.text_area :impression, class:"reviews-text", id:"review-impression", placeholder:"レビューコメント(300文字以内)" %>
+      <%= f.text_area :impression, class:"reviews-impression", id:"review-impression", placeholder:"レビューコメント(300文字以内)" %>
     </div>
     <%# 本のレビュー %>
 
@@ -66,3 +68,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render partial:'shared/footer' %>

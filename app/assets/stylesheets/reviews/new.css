@@ -1,0 +1,99 @@
+.reviews-contents {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.reviews-main {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.reviews-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.indispensable {
+  color: red;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.img-upload, .new-reviews, .reviews-detail {
+  margin-bottom: 20px;
+}
+
+.img-upload .click-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.reviews-text {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.reviews-impression{
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.select-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.review-btn-contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-btn, .back-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.review-btn {
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+}
+
+.back-btn {
+  background-color: #6c757d;
+  color: #fff;
+  text-decoration: none;
+}
