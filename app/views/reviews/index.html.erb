@@ -10,6 +10,8 @@
     <h2>新着投稿</h2>
       <div class="card-container">
         <% @reviews.each do |review| %>
+          <li class='list'>
+          <%= link_to review_path(review) do %>
           <div class="card">
             <%= image_tag review.image.variant(resize: '500x500'), class: "item-img" if review.image.attached? %>
             <div class="card-content">
@@ -20,6 +22,8 @@
               <p><%= review.impression %></p>
             </div>
           </div>
+          <% end %>
+          </li>
         <% end %>
       </div>
   </div>
