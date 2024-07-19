@@ -12,6 +12,16 @@
       <p><%= @review.evaluation.name %></p>
       <p><%= @review.impression %></p>
 
+      <% if user_signed_in? && current_user.id == @review.user_id %>
+        <%= link_to '編集', "#", method: :get, class: "review-edit-btn" %>
+          <p class="or-text">or</p>
+        <%= link_to '削除', "#", class:"review-destroy" %>
+      <% end %>
+
+      <% if user_signed_in? && current_user.id != @review.user_id %>
+        <%= link_to "コメント", "#", class:"review-comment-btn" %>
+      <% end %>
+
     </div>
   </div>
 </div>
