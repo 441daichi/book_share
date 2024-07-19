@@ -19,7 +19,7 @@
       <% end %>
 
       <% if user_signed_in? && current_user.id != @review.user_id %>
-        <%= link_to "コメント", "#", class:"review-red-btn" %>
+        <%= link_to "コメント", new_review_comment_path(@review.id) , class:"review-red-btn" %>
       <% end %>
 
     </div>
