@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_19_232625) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_20_131237) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -59,9 +59,25 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_19_232625) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "follows", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_follows_on_user_id"
+  end
+
   create_table "genres", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "goods", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "review_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_goods_on_review_id"
+    t.index ["user_id"], name: "index_goods_on_user_id"
   end
 
   create_table "reviews", charset: "utf8", force: :cascade do |t|
@@ -94,5 +110,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_19_232625) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "reviews"
   add_foreign_key "comments", "users"
+  add_foreign_key "follows", "users"
+  add_foreign_key "goods", "reviews"
+  add_foreign_key "goods", "users"
   add_foreign_key "reviews", "users"
 end
