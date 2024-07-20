@@ -2,7 +2,7 @@
 
 <div class="reviews-contents">
   <div class="reviews-main">
-    <h2 class="reviews-title">レビュー内容を入力</h2>
+    <h2 class="reviews-title">変更内容を入力</h2>
     <%= form_with model: @review, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -60,7 +60,7 @@
 
     <%# 投稿ボタン %>
     <div class="review-btn-contents">
-      <%= f.submit "投稿する", class:"review-btn" %>
+      <%= f.submit "変更する", class:"review-btn" %>
       <%= link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# 投稿ボタン %>
