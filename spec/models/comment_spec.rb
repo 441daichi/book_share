@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
+  before do
+    @comment = FactoryBot.build(:comment)
+  end
   
   describe 'コメントの保存' do
     context 'コメントの保存ができるとき' do
@@ -11,12 +14,12 @@ RSpec.describe Comment, type: :model do
 
     context 'コメントの保存ができないとき' do
       it 'コメントのテキストが空だと保存できない' do
-        @comment.text = ''
+        @comment.comment_text = ''
         @comment.valid?
         expect(comment.errors.full_messages).to include("Text can't be blank")
       end
       it 'コメントのテキストが100字を超えると保存できない' do
-        @comment.text =  'a' * 101
+        @comment.comment_text =  'a' * 101
         @comment.valid?
         expect(comment.errors.full_messages).to include("Text is too long (maximum is 100 characters)")
       end
