@@ -75,3 +75,28 @@ body {
   margin: 20px 0px;
   padding: 2vh 10vw;
 }
+
+.comments-section {
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.comments-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.comment {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.comment p {
+  margin: 0;
+}
+
+.comment small {
+  color: #777;
+}
