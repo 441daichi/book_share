@@ -3,7 +3,11 @@ class CommentsController < ApplicationController
   before_action :set_review
 
   def new
-    @comment = @review.comments.new
+    if user_signed_in? && current_user.id == @review.user_id
+      redirect_to root_path, alert: "自分のレビューにコメントを投稿することはできません。"
+    else
+      @comment = Comment.new
+    end
   end
 
   def create
