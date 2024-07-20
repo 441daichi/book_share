@@ -9,6 +9,8 @@
     <div class="book-info">
       <h1><%= @review.title %></h1>
       <p>著者: <%= @review.author %></p>
+      <p>ジャンル: <%= @review.genre.name %></p>
+      <p>タグ: <%= @review.tag %></p>
       <p><%= @review.evaluation.name %></p>
       <p><%= @review.impression %></p>
 
