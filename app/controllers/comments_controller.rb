@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to root_path
+      redirect_to review_path(@review)
     else
       render :new
     end
