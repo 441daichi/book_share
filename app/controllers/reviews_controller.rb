@@ -23,6 +23,9 @@ class ReviewsController < ApplicationController
     @comments = @review.comments.order(created_at: :desc)
   end
 
+  def edit
+  end
+
   private
 
   def set_review
