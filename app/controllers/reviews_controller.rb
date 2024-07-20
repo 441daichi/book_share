@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @comments = @review.comments.order(created_at: :desc)
   end
 
   private

@@ -24,6 +24,21 @@
 
     </div>
   </div>
+
+   <div class="comments-section">
+    <h2>コメント</h2>
+    <% if @comments.any? %>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <p><strong><%= comment.user.nickname %>:</strong> <%= comment.comment_text %></p>
+          <p><small><%= time_ago_in_words(comment.created_at) %> ago</small></p>
+        </div>
+      <% end %>
+    <% else %>
+      <p>コメントはまだありません。</p>
+    <% end %>
+  </div>
+  
 </div>
 
 <%= render partial:'shared/footer' %>
