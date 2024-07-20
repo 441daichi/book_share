@@ -23,6 +23,21 @@ class ReviewsController < ApplicationController
     @comments = @review.comments.order(created_at: :desc)
   end
 
+  def edit
+    if user_signed_in? && current_user.id == @review.user_id
+    else
+      redirect_to root_path
+    end
+  end
+
+  def update
+    if @review.update(review_params)
+      redirect_to review_path(@review)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_review
