@@ -5,10 +5,26 @@ class CommentsController < ApplicationController
     @comment = @review.comments.new
   end
 
+  def create
+    @comment = @review.comments.new(comment_params)
+    @comment.user = current_user
+
+    if @comment.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def set_review
     @review = Review.find(params[:review_id])
   end
-  
+
+
+  def comment_params
+    params.require(:comment).permit(:comment_text)
+  end
+
 end
