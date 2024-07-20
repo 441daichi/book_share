@@ -4,6 +4,12 @@
 <p class="text-center"><%= @user.nickname %>の投稿レビュー</p>
 <p class="text-center">投稿数: <%= @reviews.count %></p>
 
+<% if user_signed_in? && current_user.id != @user.id %>
+  <%= form_with url: follow_user_path(@user), method: :post, local: true do %>
+    <%= button_tag "フォローする", class: "follow-btn" %>
+  <% end %>
+<% end %>
+
 <div class="card-container">
   <ul>
     <% @reviews.each do |review| %>
