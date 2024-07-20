@@ -3,5 +3,5 @@ class Comment < ApplicationRecord
   belongs_to :review
 
 
-  validates :comment_text, presence: true
+  validates :comment_text, presence: true, length: { maximum: 100 }
 end
