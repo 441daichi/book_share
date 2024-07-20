@@ -4,7 +4,7 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :genre
   belongs_to :evaluation
-  has_many   :comments
+  has_many   :comments, dependent: :destroy
 
   has_one_attached :image
 
