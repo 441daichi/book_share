@@ -1,18 +1,44 @@
 <%= render partial:'shared/header' %>
+
 <div calss = "main">
   <div class="book-detail">
+    <p>投稿者: <%= @review.user.nickname %></p>
     <div class="book-image">
-      <%= image_tag "sample-book-cover", alt: "book_title" %>
+      <%= image_tag @review.image, alt: "book_title" %>
     </div>
     <div class="book-info">
-      <h1><%= "@book.title" %></h1>
-      <p>著者: <%= "@book.author" %></p>
-      <div class="rating">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-      </div>
-      <p><%= "@book.comment" %></p>
-      <p>投稿者: <%= "@book.user.name" %></p>
+      <h1><%= @review.title %></h1>
+      <p>著者: <%= @review.author %></p>
+      <p><%= @review.evaluation.name %></p>
+      <p><%= @review.impression %></p>
+
+      <% if user_signed_in? && current_user.id == @review.user_id %>
+        <%= link_to '編集', "#", method: :get, class: "review-red-btn" %>
+          <p class="or-text">or</p>
+        <%= link_to '削除', "#", class:"review-destroy" %>
+      <% end %>
+
+      <% if user_signed_in? && current_user.id != @review.user_id %>
+        <%= link_to "コメント", new_review_comment_path(@review.id) , class:"review-red-btn" %>
+      <% end %>
+
     </div>
   </div>
+
+   <div class="comments-section">
+    <h2>コメント</h2>
+    <% if @comments.any? %>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <p><strong><%= comment.user.nickname %>:</strong> <%= comment.comment_text %></p>
+          <p><small><%= time_ago_in_words(comment.created_at) %> ago</small></p>
+        </div>
+      <% end %>
+    <% else %>
+      <p>コメントはまだありません。</p>
+    <% end %>
+  </div>
+  
 </div>
+
 <%= render partial:'shared/footer' %>

@@ -9,21 +9,26 @@
   <div class="review-content">
     <h2>新着投稿</h2>
       <div class="card-container">
-        <% @reviews.each do |review| %>
-          <div class="card">
-            <%= image_tag review.image.variant(resize: '500x500'), class: "item-img" if review.image.attached? %>
-            <div class="card-content">
-              <h3><%= review.title %></h3>
-              <p><%= review.author %></p>
-              <p>タグ:<%= review.tag %></p>
-              <p>評価: <%= review.evaluation.name %></p>
-              <p><%= review.impression %></p>
+        <ul>
+          <% @reviews.each do |review| %>
+            <li class='list'>
+            <%= link_to review_path(review) do %>
+            <div class="card">
+              <%= image_tag review.image.variant(resize: '500x500'), class: "review-img" if review.image.attached? %>
+              <div class="card-content">
+                <h3><%= review.title %></h3>
+                <p><%= review.author %></p>
+                <p>タグ:<%= review.tag %></p>
+                <p>評価: <%= review.evaluation.name %></p>
+                <p><%= review.impression %></p>
+              </div>
             </div>
-          </div>
-        <% end %>
+            <% end %>
+            </li>
+          <% end %>
+        </ul>
       </div>
   </div>
 </div>
 
-</div>
 <%= render partial:'shared/footer' %>
