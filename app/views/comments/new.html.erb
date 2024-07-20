@@ -1,1 +1,15 @@
-コメント
+<%= render partial:'shared/header' %>
+
+<div class="comment-contents">
+  <h2 class="comment-title">コメントを入力</h2>
+  <%= form_with(model: [@review, @comment], local: true) do|f| %>
+    <%= f.text_area :comment_text, id:"comment-text" %>
+
+    <div class="comment-btn-contents">
+      <%= f.submit "コメントする" ,class:"comment-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  <% end %>
+</div>
+
+<%= render partial:'shared/footer' %>
