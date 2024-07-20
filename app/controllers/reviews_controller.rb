@@ -24,6 +24,10 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    if user_signed_in? && current_user.id == @review.user_id
+    else
+      redirect_to root_path
+    end
   end
 
   def update
