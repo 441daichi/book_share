@@ -17,7 +17,7 @@
       <% if user_signed_in? && current_user.id == @review.user_id %>
         <%= link_to '編集', edit_review_path(@review.id), method: :get, class: "review-red-btn" %>
           <p class="or-text">or</p>
-        <%= link_to '削除', "#", class:"review-destroy" %>
+        <%= link_to '削除', "/reviews/#{@review.id}", data: {turbo_method: :delete}, class:"review-destroy" %>
       <% end %>
 
       <% if user_signed_in? && current_user.id != @review.user_id %>
