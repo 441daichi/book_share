@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to review_path(@review)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
