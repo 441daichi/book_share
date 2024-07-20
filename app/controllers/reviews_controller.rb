@@ -26,6 +26,14 @@ class ReviewsController < ApplicationController
   def edit
   end
 
+  def update
+    if @review.update(review_params)
+      redirect_to review_path(@review)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_review
