@@ -16,12 +16,17 @@ RSpec.describe Comment, type: :model do
       it 'コメントのテキストが空だと保存できない' do
         @comment.comment_text = ''
         @comment.valid?
-        expect(comment.errors.full_messages).to include("Text can't be blank")
+        expect(@comment.errors.full_messages).to include("Comment text can't be blank")
       end
       it 'コメントのテキストが100字を超えると保存できない' do
         @comment.comment_text =  'a' * 101
         @comment.valid?
-        expect(comment.errors.full_messages).to include("Text is too long (maximum is 100 characters)")
+        expect(@comment.errors.full_messages).to include("Comment text is too long (maximum is 100 characters)")
+      end
+      it 'コメントに紐づくユーザーが存在しなければ保存できない' do
+        @comment.user = nil
+        @comment.valid?
+        expect(@comment.errors.full_messages).to include("User must exist")
       end
     end
   end
