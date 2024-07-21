@@ -18,7 +18,7 @@ class Review < ApplicationRecord
 
   def self.search(search)
     if search.present?
-      where('title LIKE ? OR author LIKE ? OR tag LIKE ? OR impression LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+      where('title LIKE ? OR author LIKE ? OR tag LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
     else
       all
     end
