@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :comments
+  has_many :follows
 
          PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
          validates_format_of :password, with: PASSWORD_REGEX, message: 'Password is invalid. Include both letters and numbers'
