@@ -6,9 +6,9 @@
       <button class="search-button">
         <%= image_tag "search_icon.png", class:"search-icon" %>
       </button>
-      <select class='input-genre-box'>
-        <option value="" selected disabled>ジャンルから探す</option>
-      </select>
+        <%= form_with model: @review, local: true do |f| %>
+          <%= f.select(:genre_id, options_for_select([['ジャンルから探す', nil]] + Genre.all.map { |genre| [genre.name, genre.id] }), {}, { class: "select-box", id: "review-genre" }) %>
+        <% end %>
       <button class="search-button">
         <%= image_tag "search_icon.png", class:"search-icon" %>
       </button>
