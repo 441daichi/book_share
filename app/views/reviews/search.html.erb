@@ -1,16 +1,30 @@
 <%= render partial:'shared/header' %>
 
-<h1>検索結果</h1>
+<h2>検索結果</h2>
+
 
 <% if @reviews.any? %>
-  <ul>
-    <% @reviews.each do |review| %>
-      <li>
-        <%= link_to review.title, review_path(review) %>
-        <p><%= truncate(review.impression, length: 100) %></p>
-      </li>
-    <% end %>
-  </ul>
+  <div class="card-container">
+    <ul>
+      <% @reviews.each do |review| %>
+        <li class='list'>
+          <%= link_to review_path(review) do %>
+            <div class="card">
+              <%= image_tag review.image.variant(resize: '500x500'), class: "review-img" if review.image.attached? %>
+              <div class="card-content">
+                <h3><%= review.title %></h3>
+                <p><%= review.author %></p>
+                <p>ジャンル: <%= review.genre.name %></p>
+                <p>タグ: <%= review.tag %></p>
+                <p>評価: <%= review.evaluation.name %></p>
+                <p><%= review.impression %></p>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 <% else %>
   <p>検索結果が見つかりませんでした。</p>
 <% end %>
