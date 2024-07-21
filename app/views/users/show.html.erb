@@ -4,7 +4,7 @@
 <p class="text-center"><%= @user.nickname %>の投稿レビュー</p>
 <p class="text-center">投稿数: <%= @reviews.count %></p>
 
-<%= render partial:'relationships/btn' %>
+<%= render partial:'relationships/btn', locals: { user: @user }  %>
 
 <div class="card-container">
   <ul>
