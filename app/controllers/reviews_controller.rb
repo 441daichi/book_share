@@ -50,14 +50,15 @@ class ReviewsController < ApplicationController
   def search
     @query = params[:query]
     @genre_id = params[:genre_id]
-    @reviews = if @query.present?
-                 Review.where('title LIKE ? OR author LIKE ? OR tag LIKE ? OR impression LIKE ?', "%#{@query}%", "%#{@query}%", "%#{@query}%", "%#{@query}%")
-               else
-                 Review.none
-               end
+
+    @reviews = Review.all
+
+    if @query.present?
+      @reviews = @reviews.where('title LIKE ? OR author LIKE ? OR tag LIKE ? OR impression LIKE ?', "%#{@query}%", "%#{@query}%", "%#{@query}%", "%#{@query}%")
+    end
 
     if @genre_id.present?
-       @reviews = @reviews.where(genre_id: @genre_id)
+      @reviews = @reviews.where(genre_id: @genre_id)
     end
   end
 
