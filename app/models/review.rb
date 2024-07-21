@@ -17,11 +17,11 @@ class Review < ApplicationRecord
   validates :impression, length: { maximum: 300 }
 
   def self.search(search)
-    if search != ""
-      Tweet.where('text LIKE(?)', "%#{search}%")
+    if search.present?
+      where('title LIKE ? OR author LIKE ? OR tag LIKE ? OR impression LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     else
-      Tweet.all
+      all
     end
   end
-  
+
 end

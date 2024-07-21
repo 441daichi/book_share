@@ -1,0 +1,14 @@
+<h1>検索結果</h1>
+
+<% if @reviews.any? %>
+  <ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <%= link_to review.title, review_path(review) %>
+        <p><%= truncate(review.impression, length: 100) %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>検索結果が見つかりませんでした。</p>
+<% end %>

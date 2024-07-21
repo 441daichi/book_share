@@ -48,7 +48,12 @@ class ReviewsController < ApplicationController
   end
 
   def search
-    @reviews = Review.search(params[:keyword])
+    @query = params[:query]
+    @reviews = if @query.present?
+                 Review.where('title LIKE ? OR author LIKE ? OR tag LIKE ? OR impression LIKE ?', "%#{@query}%", "%#{@query}%", "%#{@query}%", "%#{@query}%")
+               else
+                 Review.all
+               end
   end
 
   private
