@@ -2,12 +2,12 @@
   <div class='search-bar-contents'>
     <%= link_to image_tag("book_share_icon.png", class:"book-icon"), "/" %>
       <%= form_with url: search_reviews_path, method: :get, class: "search-form" do %>
-        <input class='input-keyword-box' placeholder='キーワードから探す'>
+        <input name="query" class='input-keyword-box' placeholder='キーワードから探す'>
         <button class="search-button">
           <%= image_tag "search_icon.png", class:"search-icon" %>
         </button>
       <% end %>
-      
+
         <%= form_with model: @review, local: true do |f| %>
           <%= f.select(:genre_id, options_for_select([['ジャンルから探す', nil]] + Genre.all.map { |genre| [genre.name, genre.id] }), {}, { class: "select-box", id: "review-genre" }) %>
         <% end %>

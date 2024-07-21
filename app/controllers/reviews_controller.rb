@@ -52,7 +52,7 @@ class ReviewsController < ApplicationController
     @reviews = if @query.present?
                  Review.where('title LIKE ? OR author LIKE ? OR tag LIKE ?', "%#{@query}%", "%#{@query}%", "%#{@query}%")
                else
-                 Review.all
+                 Review.none
                end
   end
 
