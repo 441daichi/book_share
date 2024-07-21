@@ -2,7 +2,7 @@
 
 <div calss = "main">
   <div class="book-detail">
-    <p>投稿者: <%= @review.user.nickname %></p>
+    <p>投稿者: <%= link_to @review.user.nickname, user_path(@review.user) %></p>
     <div class="book-image">
       <%= image_tag @review.image, alt: "book_title" %>
     </div>
