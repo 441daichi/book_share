@@ -16,4 +16,12 @@ class Review < ApplicationRecord
   validates :evaluation_id, presence: true, numericality: { other_than: 0 }
   validates :impression, length: { maximum: 300 }
 
+  def self.search(search)
+    if search != ""
+      Tweet.where('text LIKE(?)', "%#{search}%")
+    else
+      Tweet.all
+    end
+  end
+  
 end
