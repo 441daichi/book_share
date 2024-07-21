@@ -16,4 +16,12 @@ class Review < ApplicationRecord
   validates :evaluation_id, presence: true, numericality: { other_than: 0 }
   validates :impression, length: { maximum: 300 }
 
+  def self.search(search)
+    if search.present?
+      where('title LIKE ? OR author LIKE ? OR tag LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      all
+    end
+  end
+
 end
