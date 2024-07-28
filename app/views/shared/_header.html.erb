@@ -6,7 +6,7 @@
         <button class="search-button">
           <%= image_tag "search_icon.png", class:"search-icon" %>
         </button>
-        <%= select_tag :genre_id, options_for_select([['ジャンルから探す', nil]] + Genre.all.map { |genre| [genre.name, genre.id] }), { style: "width: 15vw; height: 5vh; border: solid black 1px; font-size: 14px; line-height: normal;" } %>
+        <%= select_tag :genre_id, options_for_select([['ジャンルから探す', nil]] + Genre.all.reject { |genre| genre.id == 0 }.map { |genre| [genre.name, genre.id] }), { style: "width: 15vw; height: 5vh; border: solid black 1px; font-size: 14px; line-height: normal;" } %>
         <button class="search-button">
           <%= image_tag "search_icon.png", class:"search-icon" %>
         </button>
